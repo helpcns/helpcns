@@ -66,6 +66,31 @@ class UrgentCall extends TrunkCall
  }
 }
 
+class LightingCall extends TrunkCall
+{
+ double call_rate;
+ LightingCall()
+ {
+  super();
+  call_rate=1.2;
+ }
+ LightingCall(double d)
+ {
+  super(d);
+  call_rate=1.2;
+ }
+ LightingCall(double d,double f)
+ {
+  super(d);
+  call_rate=f;
+ }
+ void calcCharge()
+ {
+  charge = duration*call_rate;
+  System.out.println("For LightingCall charge:"+charge);
+ }
+}
+
 class Telephone
 {
  public static void main(String args[])
@@ -78,5 +103,10 @@ class Telephone
   UrgentCall urgCall = new UrgentCall(1.0,2.0);
   tref = urgCall;
   tref.calcCharge();
+  
+  LightingCall ligCall = new LightingCall(2.0,3.0);
+  tref = ligCall;
+  tref.calcCharge();
+  
  }
 }
