@@ -25,7 +25,7 @@ System.out.println(e);
 }
 
 }
-class Exception
+class ExceptionDemo
 {
  public static void main(String args[])
  {
